@@ -10,6 +10,7 @@ lat = '40.75009231913161'
 lon = '-73.98638285425646'
 exclude = 'minutely,hourly,alerts'
 
+# API Call
 url = (
     'https://api.openweathermap.org/data/2.5/onecall?' +
     'lat={lat}&lon={lon}&exclude={exclude}&appid={API_key}&units=imperial'

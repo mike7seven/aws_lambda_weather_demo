@@ -4,13 +4,13 @@ Resources:
   LambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
-      FunctionName: <lambda_name>
+      FunctionName: my-func-name-lambda 
       Description: A starter AWS Lambda function.
-      Role: arn:aws:iam::<account_id>:role/<aws_lambda_execution_role>
+      Role: arn:aws:iam::318881465839:role/aws-lambda-demo-role
       PackageType: Image
       Code:
-        ImageUri: <account_id>.dkr.ecr.<aws_region>.amazonaws.com/<ecr_repository_name>:latest
-      Timeout: 30
+        ImageUri: 318881465839.dkr.ecr.us-east-1.amazonaws.com/aws-lambda-demo-ecr:latest
+      Timeout: 60
       MemorySize: 128
       TracingConfig:
         Mode: Active
@@ -24,9 +24,9 @@ Resources:
     Type: AWS::Events::Rule
     DependsOn: LambdaFunction
     Properties:
-      Name: <eventbridge_name>
+      Name: my-func-name-cloudwatch # optional
       Description: "ScheduledRule"
-      ScheduleExpression: "cron(00 12 ? * MON-FRI *)"
+      ScheduleExpression: "cron(00 10 ? * MON-FRI *)"
       State: "ENABLED"
       Targets:
         -

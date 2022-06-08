@@ -4,7 +4,7 @@ Resources:
   ECRRepository:
     Type: AWS::ECR::Repository
     Properties:
-      RepositoryName: <ecr_repository_name>
+      RepositoryName: aws-lambda-demo-ecr
       RepositoryPolicyText:
         Version: "2012-10-17"
         Statement:
@@ -13,7 +13,7 @@ Resources:
             Effect: Allow
             Principal:
               AWS:
-                - "arn:aws:iam::<account_id>:user/<iam_user_name>"
+                - "arn:aws:iam::318881465839:user/aws-lambda-demo-user"
             Action:
               - "ecr:GetDownloadUrlForLayer"
               - "ecr:BatchGetImage"
