@@ -12,7 +12,7 @@ exclude = 'minutely,hourly,alerts'
 
 # API Call
 url = (
-    'https://api.openweathermap.org/data/3.0/onecall?' +
+    'https://api.openweathermap.org/data/2.5/onecall?' +
     'lat={lat}&lon={lon}&exclude={exclude}&appid={API_key}&units=imperial'
 )
 
