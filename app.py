@@ -2,6 +2,7 @@ import requests
 import json
 import os
 import smtplib
+import logging
 from datetime import datetime
 
 # https://openweathermap.org/api/one-call-api
@@ -29,10 +30,13 @@ if os.path.isfile('.env'):
     from dotenv import load_dotenv
     load_dotenv()
 
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 def __send_email(msg: str) -> None:
     gmail_user = os.getenv('EMAIL_USER')
     gmail_password = os.getenv('EMAIL_PASSWORD')
+    logger.error(__send_email)
 
     # Create Email
     mail_from = gmail_user
