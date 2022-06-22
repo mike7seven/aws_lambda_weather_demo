@@ -68,11 +68,11 @@ def handler(event, context):
     today_weather = data['daily'][0]['weather'][0]['main'].lower()
 
     if today_weather in rain_conditions:
-        msg = 'Pack an umbrella!'
+        msg = 'The weather is rainy today at the Empire State building, pack an umbrella!'
     elif today_weather in snow_conditions:
-        msg = 'Pack your snow boots!'
+        msg = 'The weather is and snowy today at the Empire State building, pack your snow boots!'
     else:
-        msg = 'Clear skies today!'
+        msg = 'The weather is nice today at the Empire State building, prepare for clear skies today!'
 
     __send_email(msg)
 
